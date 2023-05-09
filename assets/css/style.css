@@ -1,14 +1,23 @@
+body {
+    background-image: url("");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     display: grid;
     justify-content: stretch;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 2fr 5fr 1fr;
     min-height: 100vh;
+    background-color: transparent;
 }
 
 #search-engine {
     background-color: aqua;
-    order: 2;
+    order: 1;
 }
 
 #weather {
@@ -16,19 +25,14 @@
     order: 3;
 }
 
-#date-time {
-    background-color: blue;
-    order: 3;
-}
-
 #michael {
     background-color: blueviolet;
-    order: 4
+    order: 4;
 }
 
 #erik {
     background-color: brown;
-    order: 1;
+    order: 2;
 }
 
 #susan {
@@ -38,16 +42,32 @@
 
 #settings {
     background-color: yellowgreen;
-    order: 9;
+    order: 7;
 }
 
 #quotes {
     background-color: thistle;
-    order: 8;
+    order: 9;
 }
 
 #todo-list {
     background-color: teal;
-    order: 7;
+    order: 9;
 }
 
+.feature {
+    background-color: transparent;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Date-Time div*/
+#date-time {
+    order: 5;
+}
+
+#curtTime {
+
+}
