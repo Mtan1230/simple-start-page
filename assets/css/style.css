@@ -12,6 +12,7 @@ body {
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 2fr 5fr 1fr;
     min-height: 100vh;
+    min-width: 100vw;
     background-color: transparent;
 }
 
@@ -65,9 +66,18 @@ body {
 
 /* Date-Time div*/
 #date-time {
+    flex-direction: column;
     order: 5;
 }
 
 #curtTime {
+    font-size: 18vh;
+}
 
+#curtDate {
+    font-size: 6vh;
+}
+
+#welcMsg {
+    font-size: 6vh;
 }

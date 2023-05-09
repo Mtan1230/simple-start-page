@@ -1,16 +1,15 @@
   const curtTime = $('#curtTime');
   const curtDate = $('#curtDate');
+  const welcMsg = $('#welcMsg');
 
   function setDateTime() {
     curtTime.text(dayjs().format('h:mm a'));
-    curtDate.text(dayjs().format('MMM D, YYYY'));
+    curtDate.text(dayjs().format('MMM D, dddd'));
+    welcMsg.text('Hello ' + user.name);
     setInterval(function () {
-      currentDay.text(dayjs().format('MMM D, YYYY h:mm:ss a'))
-      //when hour changes, re-set color
-      let dynamicHour = dayjs().format('HH') * 1;
-      if (dynamicHour !== staticHour) {
-        staticHour = dynamicHour;
-        setColor();
+      curtTime.text(dayjs().format('h:mm a'));
+      if (dayjs().hour() === 0) {
+        curtDate.text(dayjs().format('MMM D, dddd'));
       }
     }, 1000);
   }
