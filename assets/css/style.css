@@ -1,53 +1,24 @@
+body {
+    background-image: url("");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     display: grid;
     justify-content: stretch;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 2fr 5fr 1fr;
     min-height: 100vh;
+    background-color: transparent;
 }
 
-#search-engine {
-    background-color: aqua;
-    order: 1;
+.feature {
+    background-color: transparent;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-#weather {
-    background-color: aquamarine;
-    order: 3;
-}
-
-#date-time {
-    background-color: blue;
-    order: 2;
-}
-
-#michael {
-    background-color: blueviolet;
-    order: 4
-}
-
-#erik {
-    background-color: brown;
-    order: 5;
-}
-
-#susan {
-    background-color: orange;
-    order: 6;
-}
-
-#settings {
-    background-color: yellowgreen;
-    order: 9;
-}
-
-#quotes {
-    background-color: thistle;
-    order: 8;
-}
-
-#todo-list {
-    background-color: teal;
-    order: 7;
-}
-
