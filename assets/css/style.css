@@ -12,7 +12,48 @@ body {
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 2fr 5fr 1fr;
     min-height: 100vh;
+    min-width: 100vw;
     background-color: transparent;
+}
+
+#search-engine {
+    background-color: aqua;
+    order: 1;
+}
+
+#weather {
+    background-color: aquamarine;
+    order: 3;
+}
+
+#michael {
+    background-color: blueviolet;
+    order: 4;
+}
+
+#erik {
+    background-color: brown;
+    order: 2;
+}
+
+#susan {
+    background-color: orange;
+    order: 6;
+}
+
+#settings {
+    background-color: yellowgreen;
+    order: 7;
+}
+
+#quotes {
+    background-color: thistle;
+    order: 9;
+}
+
+#todo-list {
+    background-color: teal;
+    order: 9;
 }
 
 .feature {
@@ -21,4 +62,22 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Date-Time div*/
+#date-time {
+    flex-direction: column;
+    order: 5;
+}
+
+#curtTime {
+    font-size: 18vh;
+}
+
+#curtDate {
+    font-size: 6vh;
+}
+
+#welcMsg {
+    font-size: 6vh;
 }
