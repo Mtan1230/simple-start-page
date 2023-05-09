@@ -16,9 +16,18 @@ body {
     background-color: transparent;
 }
 
-#search-engine {
-    background-color: aqua;
-    order: 1;
+.search {
+   text-align: center; 
+}
+
+.search h4 {
+    margin: 50px 20px 0px;
+    font-size: 30px;
+}
+
+.search input[type=text] {
+    width: 60%;
+    border-radius: 30px;
 }
 
 #weather {
