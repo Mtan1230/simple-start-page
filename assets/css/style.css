@@ -17,7 +17,8 @@ body {
 }
 
 .search {
-   text-align: center; 
+   margin: 0 auto;
+    text-align: center; 
 }
 
 .search h4 {
@@ -28,6 +29,23 @@ body {
 .search input[type=text] {
     width: 60%;
     border-radius: 30px;
+    outline: none;
+    padding-left: 9px;
+    padding-top: 9px;
+    padding-bottom: 7px;
+    border: solid 1px black;
+}
+
+.search a {
+    background-color: #fcfafa;
+    margin-top: 20px;
+    width: 100px;
+    text-align: center;
+    margin-left: 5px;
+}
+
+.search a:hover{
+    background-color: #d6edf3;
 }
 
 #weather {
