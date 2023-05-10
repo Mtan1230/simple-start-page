@@ -16,9 +16,41 @@ body {
     background-color: transparent;
 }
 
-#search-engine {
-    background-color: aqua;
-    order: 1;
+.search {
+   margin: 0 auto;
+}
+
+.search h4 {
+    margin: 50px 20px 0px;
+    font-size: 30px;
+}
+
+.search input[type=text] {
+    width: 60%;
+    border-radius: 30px;
+    outline: none;
+    padding-left: 9px;
+    padding-top: 9px;
+    padding-bottom: 7px;
+    border: solid 1px black;
+}
+
+.search a {
+    background-color: #fcfafa;
+    margin-top: 20px;
+    width: 100px;
+    text-align: center;
+    margin-left: 5px;
+}
+
+.search a:hover{
+    background-color: #d6edf3;
+}
+
+.feature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #weather {
