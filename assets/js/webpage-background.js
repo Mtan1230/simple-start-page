@@ -1,4 +1,4 @@
-const accessKey = '6d775f08-961e-48d5-8e02-77c918d1f1be';
+const accessKey = 'oNYAMSRxDEbcBS2JxqDx55PVoeQ7UJc8fbiiSjPu';
 
 fetch(`https://api.nasa.gov/planetary/apod?api_key=${accessKey}`)
   .then(response => response.json())
