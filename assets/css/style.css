@@ -71,20 +71,23 @@ body {
 }
 
 #curtTime {
-    font-size: 18vh;
+    font-size: 16vh;
 }
 
 #curtDate {
     font-size: 6vh;
 }
 
-#welcMsg {
+#welcMsg,
+#welcMsg-close {
     font-size: 6vh;
 }
 
 #name {
+    display: none;
     outline: none;
     border: none;
     border-bottom: 1px solid;
     font-size: 5vh;
+    max-width: 15vw;
 }
