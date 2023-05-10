@@ -81,3 +81,10 @@ body {
 #welcMsg {
     font-size: 6vh;
 }
+
+#name {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid;
+    font-size: 5vh;
+}
