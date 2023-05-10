@@ -47,6 +47,14 @@ body {
 .search a:hover{
     background-color: #d6edf3;
 }
+.feature {
+    background-color: transparent;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 
 #weather {
     background-color: aquamarine;
