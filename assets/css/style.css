@@ -17,7 +17,8 @@ body {
 }
 
 .search {
-   margin: 0 auto;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .search h4 {
@@ -43,7 +44,7 @@ body {
     margin-left: 5px;
 }
 
-.search a:hover{
+.search a:hover {
     background-color: #d6edf3;
 }
 
@@ -52,7 +53,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 #weather {
     background-color: aquamarine;
     order: 3;
