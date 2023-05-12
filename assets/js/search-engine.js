@@ -1,10 +1,9 @@
 function myFunction(){
     // Store search keyword
-    var x = document.getElementById("search").value;
+    var x = document.getElementById("search");
     const url = "https://www.google.com/";
+    window.open(url);
     var url1 = url + x;
     var win = window.open(url1, '_blank');
     win.focus;
-
 }
-object.onclick = "myFunction()"
