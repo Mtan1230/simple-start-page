@@ -5,6 +5,4 @@ function myFunction(){
     var url1 = url + x;
     var win = window.open(url1, '_blank');
     win.focus;
-
 }
-object.onclick = "myFunction()"
