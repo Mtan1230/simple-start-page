@@ -1,3 +1,7 @@
+* {
+    color: white;
+}
+
 body {
     background-image: url("");
     background-size: cover;
@@ -54,37 +58,37 @@ body {
     align-items: center;
 }
 #weather {
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     order: 3;
 }
 
 #ai {
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     order: 4;
 }
 
 #erik {
-    background-color: brown;
+    /* background-color: brown; */
     order: 2;
 }
 
 #susan {
-    background-color: orange;
+    /* background-color: orange; */
     order: 6;
 }
 
 #settings {
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
     order: 7;
 }
 
 #quotes {
-    background-color: thistle;
+    /* background-color: thistle; */
     order: 9;
 }
 
 #todo-list {
-    background-color: teal;
+    /* background-color: teal; */
     order: 9;
 }
 
@@ -133,9 +137,9 @@ body {
 }
 
 #who-are-you {
-    display: none;
+    visibility: hidden;
     background-color: aqua;
-    /* display: block; */
+    width: 40%;
 }
 
 #hello-there {
@@ -143,14 +147,16 @@ body {
 }
 
 #ai:hover #who-are-you{
-    display: block;
+    visibility: visible;
 }
 
 #first {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    color: #fcfafa;
     z-index: 1;
-    background-color: black;
     width: 100%;
     height: 100%;
     top: 0;
@@ -160,13 +166,33 @@ body {
 }
 
 #second {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
     position: absolute;
     z-index: 0;
-    background-color: aqua;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+}
+
+#third {
+    visibility: hidden;
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#open-ai-key {
+    display: none;
 }

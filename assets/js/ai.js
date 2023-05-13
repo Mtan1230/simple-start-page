@@ -1,33 +1,52 @@
-/** make text appear in the innerHTML of the element, one character at a time per timeBetween */
-const elem = document.getElementById('hello-there');
+const firstText = document.getElementById('hello-there');
+const secondText = document.getElementById('I-am-Mia');
+const firstPage = document.getElementById('first');
 const secondPage = document.getElementById('second');
+const thirdPage = document.getElementById('third');
+const openAiKey = document.getElementById("open-ai-key");
 
-function appearChars(str, elem, timeBetween) {
-    var index = -1;
-    (function go() {
-        if (++index < str.length) {
-         	elem.textContent = elem.textContent + str.charAt(index);
-            setTimeout(go, timeBetween);
+const nextBtn = document.getElementsByClassName('next-btn');
+
+const str1 = "... \n Hello, there.";
+const timeBetween1 = 500;
+const str2 = "My name is Mia.";
+const timeBetween2 = 250;
+
+function displayText(str, elem, timeBetween) {
+    let i = 0;
+    const interval = setInterval(function () {
+        elem.textContent = elem.textContent + str.charAt(i);
+        i++;
+        if (i === str.length) {
+            clearInterval(interval);
         }
-    })();
+    }, timeBetween)
 }
 
-// example
-var str = "... \n Hello, There.";
+displayText(str1, firstText, timeBetween1);
+const firstInterval = setInterval(function () {
+    firstText.textContent = '';
+    displayText(str1, firstText, timeBetween1);
 
-var timeBetween = 500;
+}, 15000)
 
-appearChars(str, elem, timeBetween);
-setInterval(function() {
-    elem.textContent = '';
-    appearChars(str, elem, timeBetween);
+nextBtn[0].addEventListener('click', function () {
+    firstPage.setAttribute('style', 'display: none');
+    secondPage.setAttribute('style', "z-index: 2");
+    secondPage.setAttribute('style', 'visibility: visible');
+    displayText(str2, secondText, timeBetween2);
+    if (!user.openAI.key) {
+        openAiKey.setAttribute('style', 'display: block')
+    }
+})
 
-}, 10000)
+nextBtn[1].addEventListener('click', function () {
+    secondPage.setAttribute('style', 'display: none');
+    thirdPage.setAttribute('style', "z-index: 3");
+    thirdPage.setAttribute('style', 'visibility: visible');
 
-
-
-
-const wayBtn = document.getElementById('who-are-you');
-wayBtn.addEventListener('click', function () {
-    secondPage.setAttribute('style', "z-index: 2")
+    if (!user.openAI.key) {
+        user.openAI.key = openAiKey.value;
+       
+    }
 })
