@@ -136,17 +136,23 @@ body {
     position: relative;
 }
 
-#who-are-you {
+.next-btn {
     visibility: hidden;
-    background-color: aqua;
     width: 40%;
+    color: black;
 }
 
-#hello-there {
-
+#open-ai-key {
+    visibility: hidden;
 }
 
-#ai:hover #who-are-you{
+#ai:hover {
+    border: #fcfafa solid;
+}
+
+#first:hover .next-btn,
+#second:hover .next-btn,
+#second:hover #open-ai-key {
     visibility: visible;
 }
 
