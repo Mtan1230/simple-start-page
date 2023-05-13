@@ -12,13 +12,13 @@
 
 <body>
     <div class="container p-0">
-    <div class="search">
-        <h4>Search Engine</h4>
-        <input type="text" placeholder="Search..."><br>
-        <!-- <section id="submit"></section> -->
-        <a href="#"><button onclick="myFunction()">Submit</button></a>
-        <!-- <a href="#" class="btn" onclick="myFunction()">Search</a> -->
-    </div>
+        <div class="search">
+            <h4>Search Engine</h4>
+            <input type="text" placeholder="Search..."><br>
+            <!-- <section id="submit"></section> -->
+            <a href="#"><button onclick="myFunction()">Submit</button></a>
+            <!-- <a href="#" class="btn" onclick="myFunction()">Search</a> -->
+        </div>
         <div id="weather" class="feature" data-position="">
             <h1>weather</h1>
         </div>
@@ -32,7 +32,13 @@
             </form>
         </div>
         <div id="ai" class="feature" data-position="">
-            <h1>Michael's work</h1>
+            <div id="first">
+                <h1 id="hello-there"></h1>
+                <button id="who-are-you">Who are you?</button>
+            </div>
+            <div id="second">
+                <h1>This is Second</h1>
+            </div>
         </div>
         <div id="erik" class="feature" data-position="">
             <h1>Erik's work</h1>
@@ -63,8 +69,9 @@
 <script src="./assets/js/data.js"></script>
 <script src="./assets/js/search-engine.js"></script>
 <script src="./assets/js/date_time.js"></script>
+<script src="./assets/js/ai.js"></script>
 <!-- <script src="./assets/js/weather.js"></script> -->
 <!-- <script src="./assets/js/webpage-background.js"></script> -->
-    
-    
+
+
 </html>
