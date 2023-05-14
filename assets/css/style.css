@@ -54,7 +54,6 @@ body {
     align-items: center;
 }
 #weather {
-    background-color: aquamarine;
     order: 3;
 }
 
