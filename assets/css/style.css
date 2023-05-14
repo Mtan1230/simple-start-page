@@ -1,5 +1,12 @@
+:root{
+    --font-p: white;
+    --font-s: black;
+    --bg-p: #A4EF56;
+    --bg-s: white;
+}
+
 * {
-    color: white;
+    color: var(--font-p);
 }
 
 body {
@@ -136,10 +143,14 @@ body {
     position: relative;
 }
 
+.input {
+    color: var(--font-s);
+}
+
 .next-btn {
     visibility: hidden;
     width: 40%;
-    color: black;
+    color: var(--font-s);
     border-radius: 1rem;
     margin: 1rem auto;
 }
@@ -149,7 +160,8 @@ body {
 }
 
 #ai:hover {
-    border: #fcfafa solid;
+    border: #fcfafa solid 2px;
+    border-radius: 5px;
 }
 
 #first:hover .next-btn,
@@ -187,6 +199,7 @@ body {
     left: 0;
     bottom: 0;
     right: 0;
+    opacity: 0;
 }
 
 #third {
@@ -202,6 +215,7 @@ body {
     opacity: 0;
 }
 
+#second:hover,
 #third:hover {
     opacity: 1;
 }
@@ -218,19 +232,35 @@ body {
     flex-direction: column;
 }
 
+#main-container .float-right,
+#main-container .float-left {
+    max-width: 75%;
+    text-align: start;
+    overflow-wrap: break-word;
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+}
+
 #main-container .float-right {
     align-self: flex-end;
-    max-width: 75%;
-    background-color: lightskyblue;
+    background-color: var(--bg-p);
+    color: var(--font-s);
+    margin-right: 0.3rem;
 }
 
 #main-container .float-left {
     align-self: flex-start;
-    max-width: 75%;
-    background-color: #d6edf3;
-    color: black;
+    background-color: var(--bg-s);
+    color: var(--font-s);
+    margin-left: 0.3rem;
 }
 
 #open-ai-key {
     display: none;
+}
+
+#sent-question {
+    color: var(--font-s);
+    border-radius: 1rem;
+    margin: 1rem auto;
 }
