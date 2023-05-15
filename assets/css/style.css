@@ -45,6 +45,7 @@ body {
     padding-top: 9px;
     padding-bottom: 7px;
     border: solid 1px black;
+    color: var(--font-s);
 }
 
 .search a {
