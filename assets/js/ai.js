@@ -47,6 +47,6 @@ nextBtn[1].addEventListener('click', function () {
 
     if (!user.openAI.key) {
         user.openAI.key = openAiKey.value;
-       
     }
+    fetchChat();
 })
