@@ -2,10 +2,9 @@ const inputQ = document.getElementById('input-question');
 const sentQ = document.getElementById('sent-question');
 const chatContainer = document.getElementById('chat-container');
 
-const something =["Hermione Granger, a highly intelligent and resourceful wizard.", "Marilyn Monroe, Known for her playful and seductive tone.", "You are Daenerys Targaryen, the Mother of Dragons and a powerful leader.", "You are Tony Stark, a genius billionaire and the superhero Iron Man.", "You are William Shakespeare, a renowned playwright and poet from the Elizabethan era.", "You are Albert Einstein, a brilliant physicist known for your groundbreaking theories.", "You are Donald Trump, the 45th President of the United States and a prominent businessperson.", "You are Yoda, the wise and powerful Jedi Master.", "You are Diablo, the Lord of Terror, embodiment of evil and destruction."];
-const characters = ["You are operating in the persona of Marilyn Monroe, Known for her playful and seductive tone."]
-let character = characters[Math.floor(Math.random() * characters.length)];
-
+const characters = ["Hermione Granger, a highly intelligent and resourceful wizard.", "Marilyn Monroe, the epitome of charm, radiated a playful and seductive aura.", "Daenerys Targaryen, Protector of the Seven Kingdoms, the Mother of Dragons.", "Tony Stark, a genius billionaire and the superhero Iron Man.", "William Shakespeare, a renowned playwright and poet from the Elizabethan era.", "Albert Einstein, a brilliant physicist known for your groundbreaking theories.", "Yoda, the wise and powerful Jedi Master.", "Diablo, the Lord of Terror, embodiment of evil and destruction."];
+let character = "You are operating in the persona of " + characters[Math.floor(Math.random() * characters.length)];
+console.log(character);
 let message = [
     {role: "system", content: character},
     { role: 'user', content: 'Hello.' },
@@ -21,9 +20,10 @@ function displayInput(str) {
 
 sentQ.addEventListener('click', () => {
     if (inputQ.value) {
+        message.push({role: "user", content: inputQ.value});
         displayInput(inputQ);
         chatContainer.scrollTop = chatContainer.scrollHeight;
-        // fetchChat(inputQ);
+        fetchChat();
     }
 });
 
@@ -31,9 +31,9 @@ inputQ.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         if (inputQ.value) {
             message.push({role: "user", content: inputQ.value});
-            console.log(message)
             displayInput(inputQ);
             chatContainer.scrollTop = chatContainer.scrollHeight;
+            console.log(message);
             fetchChat();
         }
     }
@@ -50,7 +50,7 @@ async function fetchChat() {
         body: JSON.stringify({
             "model": "gpt-3.5-turbo",
             "messages": message,
-            temperature: 0.5,
+            temperature: 0.8,
         })
     })
         .then(res => {
@@ -63,7 +63,6 @@ async function fetchChat() {
             if (data.usage.total_tokens > 300) {
                 let systemMessage = [];
                 systemMessage[0] = message.shift();
-                console.log(systemMessage)
                 message =systemMessage.concat(message.slice(2));
             }
             message.push(data.choices[0].message);
@@ -72,8 +71,7 @@ async function fetchChat() {
             output.setAttribute('class', 'float-left');
             chatContainer.appendChild(output);
             chatContainer.scrollTop = chatContainer.scrollHeight;
-            console.log(message)
-            console.log(data)
+            console.log(message);
         })
         .catch(err => {
             console.error(err);
