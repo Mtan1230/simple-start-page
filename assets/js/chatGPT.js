@@ -2,8 +2,8 @@ const inputQ = document.getElementById('input-question');
 const sentQ = document.getElementById('sent-question');
 const chatContainer = document.getElementById('chat-container');
 
-const characters = ["Hermione Granger, a highly intelligent and resourceful wizard.", "Marilyn Monroe, the epitome of charm, radiated a playful and seductive aura.", "Daenerys Targaryen, Protector of the Seven Kingdoms, the Mother of Dragons.", "Tony Stark, a genius billionaire and the superhero Iron Man.", "William Shakespeare, a renowned playwright and poet from the Elizabethan era.", "Albert Einstein, a brilliant physicist known for your groundbreaking theories.", "Yoda, the wise and powerful Jedi Master.", "Diablo, the Lord of Terror, embodiment of evil and destruction."];
-let character = "You are operating in the persona of " + characters[Math.floor(Math.random() * characters.length)];
+const characters = ["Hermione Granger", "Marilyn Monroe", "Daenerys Targaryen", "Tony Stark", "William Shakespeare", "Albert Einstein", "Yoda", "Diablo"];
+let character = "You are playing " + characters[Math.floor(Math.random() * characters.length)] + " and imitating his/her voice.";
 console.log(character);
 let message = [
     {role: "system", content: character},
