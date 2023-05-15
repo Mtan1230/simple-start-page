@@ -1,5 +1,9 @@
 let user = {
     name: '',
+    openAI: {
+        key: '',
+        status: false,
+    },
 };
 
 function loadStorage() {
