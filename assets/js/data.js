@@ -4,6 +4,10 @@ let user = {
         key: '',
         status: false,
     },
+    location: {
+        lat: '',
+        lon: '',
+    },
 };
 
 function loadStorage() {
