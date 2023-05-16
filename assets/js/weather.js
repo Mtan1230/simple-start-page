@@ -1,10 +1,10 @@
 // weather.js
-document.addEventListener('DOMContentLoaded', function () {
-  const weatherDiv = document.querySelector('#weather');
+//document.addEventListener('DOMContentLoaded', function () {
+  //const weatherDiv = document.querySelector('#weather');
 
-  function fetchWeather(lat, lon) {
+  //function fetchWeather(lat, lon) {
     // Fetch weather based on user's location
-    fetch(`https://api.tomorrow.io/v4/timelines?location=${lat},${lon}&fields=temperature&timesteps=1h&units=imperial&apikey=yrzID5wkQL0b0g9UP1pUkNogMNnm8cgb`)
+    //fetch(`https://api.tomorrow.io/v4/timelines?location=${lat},${lon}&fields=temperature&timesteps=1h&units=imperial&apikey=yrzID5wkQL0b0g9UP1pUkNogMNnm8cgb`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

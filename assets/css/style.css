@@ -34,23 +34,24 @@ body {
 
 .search h4 {
     margin: 50px 20px 0px;
-    font-size: 30px;
+    font-size: 20px;
+    --font-p: white
 }
 
 .search input[type=text] {
     width: 100%;
-    border-radius: 30px;
+    border-radius: 20px;
     outline: none;
-    padding-left: 9px;
-    padding-top: 9px;
-    padding-bottom: 7px;
+    padding-left: 7px;
+    padding-top: 7px;
+    padding-bottom: 5px;
     border: solid 1px black;
     color: var(--font-s);
 }
 
 .search a {
     background-color: #fcfafa;
-    margin-top: 20px;
+    margin-top: 10px;
     width: 100px;
     text-align: center;
     margin-left: 5px;
@@ -66,7 +67,6 @@ body {
     align-items: center;
 }
 #weather {
-    /* background-color: aquamarine; */
     order: 3;
 }
 
