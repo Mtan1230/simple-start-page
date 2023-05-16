@@ -21,7 +21,7 @@ body {
     display: grid;
     justify-content: stretch;
     grid-template-columns: 2fr 3fr 2fr;
-    grid-template-rows: 2fr 5fr 1fr;
+    grid-template-rows: 2fr 5fr 2fr;
     min-height: 100vh;
     min-width: 100vw;
     background-color: transparent;
@@ -268,4 +268,11 @@ body {
     color: var(--font-s);
     border-radius: 1rem;
     margin: 1rem auto;
+}
+
+/* Quote */
+#quote {
+    font-style: italic;
+    font-weight: 500;
+
 }
