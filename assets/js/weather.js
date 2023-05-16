@@ -1,10 +1,10 @@
-// weather.js
-//document.addEventListener('DOMContentLoaded', function () {
-  //const weatherDiv = document.querySelector('#weather');
+//Fetch the weather of user's location when page loaded
+document.addEventListener('DOMContentLoaded', function () {
+  const weatherDiv = document.querySelector('#weather');
 
-  //function fetchWeather(lat, lon) {
+  function fetchWeather(lat, lon) {
     // Fetch weather based on user's location
-    //fetch(`https://api.tomorrow.io/v4/timelines?location=${lat},${lon}&fields=temperature&timesteps=1h&units=imperial&apikey=yrzID5wkQL0b0g9UP1pUkNogMNnm8cgb`)
+    fetch(`https://api.tomorrow.io/v4/timelines?location=${lat},${lon}&fields=temperature&timesteps=1h&units=imperial&apikey=yrzID5wkQL0b0g9UP1pUkNogMNnm8cgb`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -15,7 +15,7 @@
         displayWeather(data);
       })
       .catch(e => {
-        weatherDiv.innerHTML = `<h1>Error: ${e.message}</h1>`;
+        console.error(e);
       });
   }
 
@@ -27,11 +27,13 @@
   }
 
   // Fetch user's location
-  if (navigator.geolocation) {
+  if (user.location.lat) {
+    fetchWeather(user.location.lat, user.location.lon)
+  } else if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
-      fetchWeather(position.coords.latitude, position.coords.longitude);
+      user.location.lat = position.coords.latitude;
+      user.location.lon = position.coords.longitude;
+      fetchWeather(user.location.lat, user.location.lon)
     });
-  } else {
-    weatherDiv.innerHTML = `<h1>Geolocation is not supported by your browser.</h1>`;
-  }
+  } 
 });
