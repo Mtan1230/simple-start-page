@@ -2,7 +2,7 @@ SIMPLE-START-PAGE
 
 Preview/Screenshot/Link
 ![image](https://github.com/Mtan1230/simple-start-page/assets/52939857/b99c6f9b-73ea-4189-b518-67f174a5b7d6)
-https://erikfeeney.github.io/feeney-code-refactor/
+https://mtan1230.github.io/simple-start-page/
 
 Description
 This is stat page that will launch you into your day. The webpage is equipped with real time weather based off your local location. A randomized background and inspirational quote that changes each day. The current data and time is conveniently placed in the middle of the page. In addition, it has a google search bar for easy research and an AI chat box to help answer any questions. 
