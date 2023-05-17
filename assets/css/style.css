@@ -26,38 +26,46 @@ body {
     background-color: transparent;
 }
 
-.search {
-    margin: 0 auto;
-    text-align: center;
+/* Search bar */
+#search {
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
-.search h4 {
-    margin: 50px 20px 0px;
-    font-size: 20px;
-    --font-p: white
+#search img {
+    opacity: 0;
+    width: 60%;
 }
 
-.search input[type=text] {
-    width: 100%;
-    border-radius: 20px;
+#search:hover img{
+    opacity: 0.5;
+}
+
+#search form {
+    position: absolute;
+    width: 90%;
+    height: 20%;
+    top: 40%;
+    left: 5%;
+    opacity: 0.5;
+}
+
+#search:hover form {
+    opacity: 1;
+}
+
+#search button {
+    background-color: transparent;
+}
+
+#search-input {
     outline: none;
-    padding-left: 7px;
-    padding-top: 7px;
-    padding-bottom: 5px;
-    border: solid 1px black;
-    color: var(--font-s);
-}
-
-.search a {
-    background-color: #fcfafa;
-    margin-top: 10px;
-    width: 100px;
-    text-align: center;
-    margin-left: 5px;
-}
-
-.search a:hover {
-    background-color: #d6edf3;
+    border: none;
+    border-bottom: 1px solid;
+    font-size: 1.5rem;
+    width: 50%;
+    background-color: transparent;
 }
 
 .feature {
@@ -65,47 +73,33 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 #weather {
     order: 3;
 }
 
 #ai {
-    /* background-color: blueviolet; */
     order: 4;
 }
 
 #erik {
-    /* background-color: brown; */
     order: 2;
 }
 
 #susan {
-    /* background-color: orange; */
     order: 6;
 }
 
 #settings {
-    /* background-color: yellowgreen; */
     order: 7;
 }
 
 #quotes {
-    /* background-color: thistle; */
     order: 9;
 }
 
 #todo-list {
-    /* background-color: teal; */
     order: 9;
-}
-
-.feature {
-    background-color: transparent;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 
 /* Date-Time div*/
