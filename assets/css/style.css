@@ -20,7 +20,11 @@ body {
     display: grid;
     justify-content: stretch;
     grid-template-columns: 2fr 3fr 2fr;
-    grid-template-rows: 2fr 5fr 2fr;
+    grid-template-rows: 2fr 5fr 2fr 1rem;
+    grid-template-areas: 
+        "search . weather"
+        "ai time ."
+        "ai quotes .";
     min-height: 100vh;
     min-width: 100vw;
     background-color: transparent;
@@ -31,6 +35,8 @@ body {
     position: relative;
     display: flex;
     align-items: center;
+    grid-area: search;
+    width: 100%;
 }
 
 #search img {
@@ -68,44 +74,21 @@ body {
     background-color: transparent;
 }
 
+/* weather */
+#weather {
+    grid-area: weather;
+}
+
 .feature {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#weather {
-    order: 3;
-}
-
-#ai {
-    order: 4;
-}
-
-#erik {
-    order: 2;
-}
-
-#susan {
-    order: 6;
-}
-
-#settings {
-    order: 7;
-}
-
-#quotes {
-    order: 9;
-}
-
-#todo-list {
-    order: 9;
-}
-
 /* Date-Time div*/
 #date-time {
     flex-direction: column;
-    order: 5;
+    grid-area: time;
 }
 
 #curtTime {
@@ -135,6 +118,7 @@ body {
 #ai {
     flex-direction: column;
     position: relative;
+    grid-area: ai;
 }
 
 .input {
@@ -264,8 +248,8 @@ body {
 }
 
 /* Quote */
-#quote {
+#quotes {
     font-style: italic;
     font-weight: 500;
-
+    grid-area: quotes;
 }
