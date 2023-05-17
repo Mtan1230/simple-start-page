@@ -1,4 +1,4 @@
-:root{
+:root {
     --font-p: white;
     --font-s: black;
     --bg-p: #A4EF56;
@@ -14,6 +14,7 @@ body {
     background-position: center;
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 .container {
@@ -21,30 +22,33 @@ body {
     justify-content: stretch;
     grid-template-columns: 2fr 3fr 2fr;
     grid-template-rows: 2fr 5fr 2fr 1rem;
-    grid-template-areas: 
+    grid-template-areas:
         "search . weather"
         "ai time ."
         "ai quotes .";
     min-height: 100vh;
     min-width: 100vw;
-    background-color: transparent;
 }
 
-/* Search bar */
+.feature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Search */
 #search {
     position: relative;
-    display: flex;
-    align-items: center;
+    justify-self: left;
     grid-area: search;
-    width: 100%;
+    width: 90%;
 }
 
 #search img {
     opacity: 0;
-    width: 60%;
 }
 
-#search:hover img{
+#search:hover img {
     opacity: 0.5;
 }
 
@@ -70,7 +74,6 @@ body {
     border: none;
     border-bottom: 1px solid;
     font-size: 1.5rem;
-    width: 50%;
     background-color: transparent;
 }
 
@@ -79,29 +82,19 @@ body {
     grid-area: weather;
 }
 
-.feature {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Date-Time div*/
+/* Date-Time */
 #date-time {
     flex-direction: column;
     grid-area: time;
 }
 
-#curtTime {
-    font-size: 16vh;
+#time {
+    font-size: 8rem;
 }
 
-#curtDate {
-    font-size: 6vh;
-}
-
-#welcMsg,
-#welcMsg-close {
-    font-size: 6vh;
+#date,
+#date-time form {
+    font-size: 3.5rem;
 }
 
 #name {
@@ -109,10 +102,13 @@ body {
     outline: none;
     border: none;
     border-bottom: 1px solid;
-    font-size: 5vh;
+    font-size: 2.5rem;
     max-width: 15vw;
     background-color: transparent;
 }
+
+
+
 
 /* OpenAI div */
 #ai {
@@ -198,11 +194,11 @@ body {
     opacity: 1;
 }
 
-#main-container { 
+#main-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-        height: 90%;
+    height: 90%;
 
 }
 
@@ -246,6 +242,7 @@ body {
     border-radius: 1rem;
     margin: 1rem auto;
 }
+
 
 /* Quote */
 #quotes {
