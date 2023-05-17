@@ -13,15 +13,12 @@
 
 <body>
     <div class="container p-0">
-        <div class="search text-light">
-            <h5>Google</h5>
-            <!-- <input type="text" placeholder="Search..."><br> -->
-            <!-- <section id="submit"></section> -->
-            <!-- <a href="#"><button onclick="myFunction()">Submit</button></a> -->
-            <form action="https://www.google.com/search" method="GET"> <input type="text" name="q"
-                    placeholder="Search Google" autofocus> <input type="submit" value="Search"
-                    class="btn btn-outline-info"><br></form>
-            <!-- <a href="#" class="btn" onclick="myFunction()">Search</a> -->
+        <div id="search">
+            <img src="./assets/image/googlelogo.png" alt="">
+            <form action="https://www.google.com/search" method="GET">
+                <button><i class="bi bi-search fs-3"></i></button>
+                <input id="search-input" type="text" name="q" placeholder="Search Google" autofocus>
+            </form>
         </div>
         <div id="weather" class="feature text-light" data-position="">
         </div>
@@ -83,7 +80,6 @@
     crossorigin="anonymous"></script>
 
 <script src="./assets/js/data.js"></script>
-<script src="./assets/js/search-engine.js"></script>
 <script src="./assets/js/date_time.js"></script>
 <script src="./assets/js/ai.js"></script>
 <script src="./assets/js/chatGPT.js"></script>
