@@ -107,7 +107,16 @@ body {
     background-color: transparent;
 }
 
+/* Quotes */
+#quotes {
+    flex-direction: column;
+    grid-area: quotes;
+    font-weight: 500;
+}
 
+#quote {
+    font-style: italic;
+}
 
 
 /* OpenAI div */
@@ -241,12 +250,4 @@ body {
     color: var(--font-s);
     border-radius: 1rem;
     margin: 1rem auto;
-}
-
-
-/* Quote */
-#quotes {
-    font-style: italic;
-    font-weight: 500;
-    grid-area: quotes;
 }
