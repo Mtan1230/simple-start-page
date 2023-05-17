@@ -112,6 +112,7 @@ body {
     flex-direction: column;
     grid-area: quotes;
     font-weight: 500;
+    user-select: text;
 }
 
 #quote {
