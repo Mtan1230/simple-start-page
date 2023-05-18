@@ -125,12 +125,12 @@ body {
     grid-area: ai;
 }
 
-#ai > div:hover {
+#ai>div:hover {
     border: #fcfafa solid 2px;
     border-radius: 5px;
 }
 
-#ai > div:hover .next-btn,
+#ai>div:hover .next-btn,
 #second:hover #open-ai-key {
     visibility: visible;
 }
@@ -254,7 +254,7 @@ body {
     width: 90%;
 }
 
-#input-box textarea{
+#input-box textarea {
     overflow: auto;
     resize: none;
     background-color: transparent;

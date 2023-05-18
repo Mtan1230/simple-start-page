@@ -1,9 +1,9 @@
-$(function() {
+$(function () {
   const time = $('#time');
   const date = $('#date');
   const msg = $('#msg');
   const name = $('#name');
-  
+
   function setDateTime() {
     time.text(dayjs().format('h:mm'));
     date.text(dayjs().format('MMM D, dddd'));
@@ -11,7 +11,7 @@ $(function() {
       name.css('display', 'inline-block')
     }
     msg.text('Hello, ' + user.name);
-    
+
     setInterval(function () {
       time.text(dayjs().format('h:mm'));
       const hour = dayjs().hour();
@@ -35,9 +35,9 @@ $(function() {
       }
     }, 1000);
   }
-  
+
   setDateTime();
-  
+
   //listen to the name input and save on local storage
   name.on('keydown', function (e) {
     if (e.key === 'Enter') {
