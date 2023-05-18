@@ -27,11 +27,24 @@ function displayText(str, elem, timeBetween) {
 //display first page text when page loaded
 displayText(str1, firstText, timeBetween1);
 //iterate
-const firstInterval = setInterval(function () {
+let firstInterval;
+firstInterval = setInterval(function () {
     firstText.textContent = '';
     displayText(str1, firstText, timeBetween1);
-
 }, 15000)
+// Stop the iteration when the window loses focus
+window.addEventListener('blur', () => {
+    clearInterval(firstInterval);
+});
+// Start the iteration when the window is in focus
+window.addEventListener('focus', () => {
+    firstText.textContent = '';
+    displayText(str1, firstText, timeBetween1);
+    firstInterval = setInterval(function () {
+        firstText.textContent = '';
+        displayText(str1, firstText, timeBetween1);
+    }, 15000)
+});
 
 //close first page and display second page
 nextBtn[0].addEventListener('click', function () {
