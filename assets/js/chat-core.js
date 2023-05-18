@@ -78,10 +78,24 @@ sentBtn.addEventListener('click', () => {
 });
 
 inputText.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
         if (inputText.value) {
             handleInput(inputText);
         }
+    }
+});
+
+//allow shift+enter to insert a line break
+inputText.addEventListener('keydown', (e) => {
+    if (e.shiftKey && e.key === 'Enter') {
+        e.preventDefault();
+        const start = this.selectionStart;
+        const end = this.selectionEnd;
+        const value = this.value;
+        // Insert line break at the current cursor position
+        this.value = value.substring(0, start) + '\n' + value.substring(end);
+        // Move the cursor position after the inserted line break
+        this.selectionStart = this.selectionEnd = start + 1;
     }
 });
