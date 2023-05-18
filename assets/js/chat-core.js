@@ -90,12 +90,12 @@ inputText.addEventListener('keydown', (e) => {
 inputText.addEventListener('keydown', (e) => {
     if (e.shiftKey && e.key === 'Enter') {
         e.preventDefault();
-        const start = this.selectionStart;
-        const end = this.selectionEnd;
-        const value = this.value;
+        const start = inputText.selectionStart;
+        const end = inputText.selectionEnd;
+        const value = inputText.value;
         // Insert line break at the current cursor position
-        this.value = value.substring(0, start) + '\n' + value.substring(end);
+        inputText.value = value.substring(0, start) + '\n' + value.substring(end);
         // Move the cursor position after the inserted line break
-        this.selectionStart = this.selectionEnd = start + 1;
+        inputText.selectionStart = inputText.selectionEnd = start + 1;
     }
 });
