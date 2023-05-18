@@ -1,22 +1,54 @@
-SIMPLE-START-PAGE
+# Simple Start Page
 
-Preview/Screenshot/Link
-![image](https://github.com/Mtan1230/simple-start-page/assets/52939857/b99c6f9b-73ea-4189-b518-67f174a5b7d6)
-https://mtan1230.github.io/simple-start-page/
+## Description
 
-Description
-This is stat page that will launch you into your day. The webpage is equipped with real time weather based off your local location. A randomized background and inspirational quote that changes each day. The current data and time is conveniently placed in the middle of the page. In addition, it has a google search bar for easy research and an AI chat box to help answer any questions. 
+Welcome to your personalized web browser start page designed to launch you into your day!
 
-Installation
-N/A
+## Table of Contents
 
-Usage
-To use this website, you first will allow your location to be used with the application. The weather will appear based off your geographic location. In the top left, you can type whatever information you need in the google search bar which will open a new tab with your search results. On the left of the page, you can interact with the chat AI box to help answer any questions you may have. 
+* [Features](#features)
+* [Screenshots](#screenshots)
+* [Links](#links)
+* [Technologies Used](#technologies-used)
+* [Credits](#credits)
+* [License](#license)
 
-Credits
-1. https://www.youtube.com/watch?v=o2aAaVsC1Oo
-2. https://www.youtube.com/watch?v=k9L9uqIGVes
-3. https://www.youtube.com/watch?v=MutrB1aghpw
+## Features
 
-License
-This project is licensed under the MIT License - see the LICENSE.md file for details
+* Google Search Bar 
+* Weather Forecast
+* Motivational Quote
+* Customizable Background
+* Live Clock
+* AI Assistant
+* News Headlines (under development)
+* To-Do List (under development)
+
+## Screenshots
+
+![screen-capture](assets/images/screencap-1.png)
+![screen-capture](assets/images/screencap-2.png)
+
+## Links
+
+Page published at https://mtan1230.github.io/simple-start-page/
+
+## Technologies Used
+
+[![HTML5](https://img.shields.io/badge/built%20with-HTML5-f06529)](https://developer.mozilla.org/en-US/docs/Glossary/HTML5) [![CSS3](https://img.shields.io/badge/built%20with-CSS3-2965f1)](https://developer.mozilla.org/en-US/docs/Web/CSS) [![JavaScript](https://img.shields.io/badge/built%20with-JavaScript-f0db4f)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [![Bootstrap](https://img.shields.io/badge/built%20with-Bootstrap-563d7c)](https://getbootstrap.com/) [![jQuery](https://img.shields.io/badge/built%20with-jQuery-0769ad)](https://jquery.com/) [![Day.js](https://img.shields.io/badge/built%20with-Day.js-red)](https://day.js.org/) 
+
+## Credits  
+
+### Collaborators
+
+* [Erik Feeney](https://github.com/erikfeeney)
+* [Susan Sprague](https://github.com/susansprague)
+
+### Acknowledgments
+
+* [freeCodeCamp.org](https://www.youtube.com/@freecodecamp)
+* [zerotocoding](https://www.youtube.com/@zerotocoding)
+
+## License
+
+[![License badge](https://img.shields.io/badge/license-MIT-031105)](./LICENSE)
