@@ -11,15 +11,16 @@ const str1 = "... \n Hello, there.";
 const str2 = "My name is Mia.";
 const timeBetween1 = 500;
 const timeBetween2 = 250;
+let secondInterval;
 
 //function to display text character by character
 function displayText(str, elem, timeBetween) {
     let i = 0;
-    const interval = setInterval(function () {
+    secondInterval = setInterval(function () {
         elem.textContent = elem.textContent + str.charAt(i);
         i++;
         if (i === str.length) {
-            clearInterval(interval);
+            clearInterval(secondInterval);
         }
     }, timeBetween)
 }
@@ -27,24 +28,11 @@ function displayText(str, elem, timeBetween) {
 //display first page text when page loaded
 displayText(str1, firstText, timeBetween1);
 //iterate
-let firstInterval;
-firstInterval = setInterval(function () {
+const firstInterval = setInterval(function () {
+    clearInterval(secondInterval);
     firstText.textContent = '';
     displayText(str1, firstText, timeBetween1);
 }, 15000)
-// Stop the iteration when the window loses focus
-window.addEventListener('blur', () => {
-    clearInterval(firstInterval);
-});
-// Start the iteration when the window is in focus
-window.addEventListener('focus', () => {
-    firstText.textContent = '';
-    displayText(str1, firstText, timeBetween1);
-    firstInterval = setInterval(function () {
-        firstText.textContent = '';
-        displayText(str1, firstText, timeBetween1);
-    }, 15000)
-});
 
 //close first page and display second page
 nextBtn[0].addEventListener('click', function () {
