@@ -1,5 +1,6 @@
 const quote = document.getElementById('quote');
 const author = document.getElementById('author');
+const quotes = document.getElementById('quotes');
 
 async function getQuotes() {
     const key = 'LF0jwI+EzK3wwore/KkY8A==uiXxwWPhQDdHhurV';
@@ -25,3 +26,7 @@ async function getQuotes() {
 }
 
 getQuotes();
+
+quotes.addEventListener('dblclick', () => {
+    getQuotes();
+})

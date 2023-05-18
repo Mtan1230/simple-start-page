@@ -117,6 +117,7 @@ body {
 
 #quote {
     font-style: italic;
+    margin: 0 1rem;
 }
 
 /* OpenAI */
