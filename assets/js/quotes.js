@@ -1,9 +1,10 @@
 const quote = document.getElementById('quote');
 const author = document.getElementById('author');
+const quotes = document.getElementById('quotes');
 
 async function getQuotes() {
     const key = 'LF0jwI+EzK3wwore/KkY8A==uiXxwWPhQDdHhurV';
-    const url = 'https://api.api-ninjas.com/v1/quotes?category=happiness';
+    const url = 'https://api.api-ninjas.com/v1/quotes?category=inspirational';
 
     await fetch(url, {
         headers: { 'X-Api-Key': key },
@@ -16,7 +17,6 @@ async function getQuotes() {
             return res.json();
         })
         .then(data => {
-            console.log(data);
             quote.textContent = `"` + data[0].quote + `"`;
             author.textContent = data[0].author;
         })
@@ -26,3 +26,7 @@ async function getQuotes() {
 }
 
 getQuotes();
+
+quotes.addEventListener('dblclick', () => {
+    getQuotes();
+})

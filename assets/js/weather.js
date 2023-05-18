@@ -35,5 +35,5 @@ document.addEventListener('DOMContentLoaded', function () {
       user.location.lon = position.coords.longitude;
       fetchWeather(user.location.lat, user.location.lon)
     });
-  } 
+  }
 });
