@@ -4,6 +4,8 @@ $(function () {
   const msg = $('#msg');
   const name = $('#name');
 
+  let msgInterval;
+
   function setDateTime() {
     time.text(dayjs().format('h:mm'));
     date.text(dayjs().format('MMM D, dddd'));
@@ -12,7 +14,7 @@ $(function () {
     }
     msg.text('Hello, ' + user.name);
 
-    setInterval(function () {
+    msgInterval = setInterval(function () {
       time.text(dayjs().format('h:mm'));
       const hour = dayjs().hour();
       if (hour === 0) {
@@ -49,5 +51,13 @@ $(function () {
       msg.text('Hello, ' + user.name);
       localStorage.setItem("user", JSON.stringify(user));
     }
+  })
+
+  //dblclick welcome message to re-enter user name
+  msg.on('dblclick', (e) => {
+    e.stopPropagation();
+    user.name = '';
+    clearInterval(msgInterval);
+    setDateTime();
   })
 });
