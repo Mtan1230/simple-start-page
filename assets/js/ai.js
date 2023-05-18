@@ -4,14 +4,14 @@ const firstPage = document.getElementById('first');
 const secondPage = document.getElementById('second');
 const thirdPage = document.getElementById('third');
 const openAiKey = document.getElementById("open-ai-key");
-
 const nextBtn = document.getElementsByClassName('next-btn');
 
 const str1 = "... \n Hello, there.";
-const timeBetween1 = 500;
 const str2 = "My name is Mia.";
+const timeBetween1 = 500;
 const timeBetween2 = 250;
 
+//function to display text character by character
 function displayText(str, elem, timeBetween) {
     let i = 0;
     const interval = setInterval(function () {
@@ -23,15 +23,19 @@ function displayText(str, elem, timeBetween) {
     }, timeBetween)
 }
 
+//display first page text when page loaded
 displayText(str1, firstText, timeBetween1);
+//iterate
 const firstInterval = setInterval(function () {
     firstText.textContent = '';
     displayText(str1, firstText, timeBetween1);
 
 }, 15000)
 
+//close first page and display second page
 nextBtn[0].addEventListener('click', function () {
     firstPage.setAttribute('style', 'display: none');
+    clearInterval(firstInterval);
     secondPage.setAttribute('style', "z-index: 2");
     secondPage.setAttribute('style', 'visibility: visible');
     displayText(str2, secondText, timeBetween2);
@@ -40,11 +44,12 @@ nextBtn[0].addEventListener('click', function () {
     }
 })
 
+//close second page and display third page
 nextBtn[1].addEventListener('click', function () {
     secondPage.setAttribute('style', 'display: none');
     thirdPage.setAttribute('style', "z-index: 3");
     thirdPage.setAttribute('style', 'visibility: visible');
-
+    //display hello message on third page from API
     if (!user.openAI.key) {
         user.openAI.key = openAiKey.value;
     }

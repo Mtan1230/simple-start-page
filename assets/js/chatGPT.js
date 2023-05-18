@@ -1,44 +1,18 @@
-const inputQ = document.getElementById('input-question');
-const sentQ = document.getElementById('sent-question');
+const inputText = document.getElementById('input-text');
+const sentBtn = document.getElementById('sent-btn');
 const chatContainer = document.getElementById('chat-container');
 
+//assign a character to the Chatbot
 const characters = ["Hermione Granger", "Marilyn Monroe", "Daenerys Targaryen", "Tony Stark", "William Shakespeare", "Albert Einstein", "Yoda", "Diablo"];
-let character = "You are playing " + characters[Math.floor(Math.random() * characters.length)] + " and imitating his/her voice.";
-console.log(character);
+let character = "You are playing " + characters[Math.floor(Math.random() * characters.length)] + ", and imitating his/her tone.";
+
+//set the POST messages
 let message = [
-    {role: "system", content: character},
+    { role: "system", content: character },
     { role: 'user', content: 'Hello.' },
 ];
 
-function displayInput(str) {
-    const displayInput = document.createElement('p');
-    displayInput.textContent = str.value;
-    displayInput.setAttribute('class', 'float-right');
-    chatContainer.appendChild(displayInput);
-    str.value = '';
-}
-
-sentQ.addEventListener('click', () => {
-    if (inputQ.value) {
-        message.push({role: "user", content: inputQ.value});
-        displayInput(inputQ);
-        chatContainer.scrollTop = chatContainer.scrollHeight;
-        fetchChat();
-    }
-});
-
-inputQ.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        if (inputQ.value) {
-            message.push({role: "user", content: inputQ.value});
-            displayInput(inputQ);
-            chatContainer.scrollTop = chatContainer.scrollHeight;
-            console.log(message);
-            fetchChat();
-        }
-    }
-});
-
+//POST request and handle respond
 async function fetchChat() {
     const url = `https://api.openai.com/v1/chat/completions`;
     await fetch(url, {
@@ -48,9 +22,9 @@ async function fetchChat() {
             "content-Type": "application/json"
         },
         body: JSON.stringify({
-            "model": "gpt-3.5-turbo",
-            "messages": message,
-            temperature: 0.8,
+            model: "gpt-3.5-turbo",
+            messages: message,
+            temperature: 0.8 //control the level of creativity and randomness from 0 to 1
         })
     })
         .then(res => {
@@ -60,20 +34,54 @@ async function fetchChat() {
             return res.json();
         })
         .then(data => {
-            if (data.usage.total_tokens > 300) {
+            //control the tokens and message context
+            if (data.usage.total_tokens > 500 || message.length > 7) {
                 let systemMessage = [];
                 systemMessage[0] = message.shift();
-                message =systemMessage.concat(message.slice(2));
+                message = systemMessage.concat(message.slice(2));
             }
             message.push(data.choices[0].message);
+
+            //display respond
             const output = document.createElement('p');
             output.textContent = data.choices[0].message.content;
             output.setAttribute('class', 'float-left');
             chatContainer.appendChild(output);
             chatContainer.scrollTop = chatContainer.scrollHeight;
-            console.log(message);
         })
         .catch(err => {
             console.error(err);
         })
 }
+
+//display the input message in the chat box
+function displayInput(elem) {
+    const displayInput = document.createElement('p');
+    displayInput.textContent = elem.value;
+    displayInput.setAttribute('class', 'float-right');
+    chatContainer.appendChild(displayInput);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+    elem.value = '';
+}
+
+//handle user's input
+function handleInput(elem) {
+    message.push({ role: "user", content: elem.value });
+    fetchChat();
+    displayInput(elem);
+}
+
+sentBtn.addEventListener('click', () => {
+    if (inputText.value) {
+        handleInput(inputText);
+    }
+});
+
+inputText.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        if (inputText.value) {
+            handleInput(inputText);
+        }
+    }
+});
