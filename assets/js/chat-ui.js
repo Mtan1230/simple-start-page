@@ -5,6 +5,7 @@ const secondPage = document.getElementById('second');
 const thirdPage = document.getElementById('third');
 const openAiKey = document.getElementById("open-ai-key");
 const nextBtn = document.getElementsByClassName('next-btn');
+const title = document.getElementById('MiaGPT');
 
 const str1 = "... \n Hello, there.";
 const str2 = "My name is Mia.";
@@ -54,4 +55,23 @@ nextBtn[1].addEventListener('click', function () {
         user.openAI.key = openAiKey.value;
     }
     fetchChat();
+})
+
+//click the title to pin the chat box
+title.addEventListener('click', function () {
+    if (title.parentElement.dataset.status === "un-pin") {
+        title.parentElement.dataset.status = "pin"
+    } else {
+        title.parentElement.dataset.status = "un-pin"
+    }
+})
+
+//dblclick the tile to zoom the chat box
+title.addEventListener('dblclick', function (e) {
+    e.stopPropagation();
+    if (title.parentElement.dataset.size === "small") {
+        title.parentElement.dataset.size = "big"
+    } else {
+        title.parentElement.dataset.size = "small"
+    }
 })
