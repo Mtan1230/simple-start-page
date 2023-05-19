@@ -27,7 +27,7 @@ async function getQuotes() {
 
 getQuotes();
 
-quotes.addEventListener('dblclick', () => {
+quotes.addEventListener('dblclick', (e) => {
     e.stopPropagation();
     getQuotes();
 })
